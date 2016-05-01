@@ -1,0 +1,37 @@
+<!-- https://www.dashingd3js.com/d3js-first-steps -->
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Mansplaining Experiment</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+      <script type="text/javascript" src="d3.min.js"></script>
+    </head>
+    <body>
+      <h1> Mansplaining Experimental Results  </h1> 
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Question</th>
+            <th>Voice</th>
+            <th>Mansplained</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </body>
+    <script type="text/javascript" src="table.js"></script>
+    <script>
+
+      //var table1 = d3.select('body').append('table');
+      //table1.addClass('table');
+
+      var tr = d3.select('tbody').selectAll('tr').data(queryAnswerPairs).enter().append('tr');
+
+      tr.append('td').html(function(m) {return m.question; });
+      tr.append('td').html(function(m) {return m.voice; });
+      tr.append('td').html(function(m) {return m.mValue; });
+
+    </script>
+
+
+</html>
